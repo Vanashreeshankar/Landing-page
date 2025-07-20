@@ -1,0 +1,55 @@
+<header class="header">
+  <!-- Logo -->
+  <div class="logo">
+    <img [src]="logoPath" alt="Site Logo" />
+  </div>
+
+  <!-- Center Navigation -->
+  <nav class="nav-links desktop center" aria-label="Primary navigation">
+    <a>Product</a>
+    <a>Analytics</a>
+    <a>Pricing</a>
+    <a>Testimonial</a>
+    <a>About Us</a>
+  </nav>
+
+  <!-- Right: Login + Language -->
+  <div class="right-controls desktop">
+    <a class="login">Login</a>
+    <select [(ngModel)]="selectedLang" aria-label="Select Language">
+      <option value="en">En</option>
+      <option value="de">De</option>
+    </select>
+  </div>
+
+  <!-- Hamburger Button -->
+  <button
+    class="hamburger"
+    (click)="toggleMobileMenu()"
+    aria-label="Toggle mobile menu"
+    aria-controls="mobile-nav"
+    [attr.aria-expanded]="mobileMenuOpen"
+  >
+    <span>{{ mobileMenuOpen ? '✕' : '☰' }}</span>
+  </button>
+
+  <!-- Mobile Navigation -->
+  <nav
+    *ngIf="mobileMenuOpen"
+    @mobileMenuAnim
+    class="nav-links mobile"
+    id="mobile-nav"
+    aria-label="Mobile navigation"
+  >
+    <a>Product</a>
+    <a>Analytics</a>
+    <a>Pricing</a>
+    <a>Testimonial</a>
+    <a>About Us</a>
+    <a>Login</a>
+    <select [(ngModel)]="selectedLang" aria-label="Select Language">
+      <option value="en">En</option>
+      <option value="de">De</option>
+    </select>
+  </nav>
+</header>

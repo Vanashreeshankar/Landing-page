@@ -1,0 +1,69 @@
+<!-- price.component.html -->
+<section class="price-wrapper">
+  <div class="interactive-container">
+    <div class="content-group">
+
+      <!-- Row 1: Packages -->
+      <div class="price-row">
+        <div class="price-intro">
+          <p class="eyebrow">EFFICIENT & CUSTOMISABLE</p>
+          <h2 class="packages-heading">
+            They’ve got it all: our software packages
+          </h2>
+          <p class="packages-description">
+            Whether you're an ambitious start-up, government agency or established corporation, our software packages are as flexible as your individual social media management needs are diverse.
+          </p>
+          <button class="compare-button">Compare packages</button>
+        </div>
+
+        <div class="packages-section card-glass fade-in">
+          <div class="tab-switcher">
+            <button [class.active]="activeTab === 'professional'" (click)="switchTab('professional')">
+              Professional
+            </button>
+            <button [class.active]="activeTab === 'enterprise'" (click)="switchTab('enterprise')">
+              Enterprise
+            </button>
+          </div>
+          <p *ngIf="activeTab === 'professional'">Advanced tools for scaling your social strategy efficiently.</p>
+          <p *ngIf="activeTab === 'enterprise'">Everything in Professional, plus enhanced collaboration and support.</p>
+
+          <ul>
+            <li *ngFor="let feature of currentFeatures">{{ feature }}</li>
+          </ul>
+
+          <div class="buttons">
+            <button class="demo">Request a demo</button>
+            <button class="info">More info</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Security -->
+      <div class="security-row">
+        <div class="security-intro">
+          <span class="secure-label">WE ARE SECURE</span>
+          <h2 class="security-heading">
+            <span class="highlight">Your data, our priority</span>
+          </h2>
+          <p class="security-description">
+            The SocialHub is ISO 27001 certified, 100% BDSG & DSGVO compliant and is completely developed and hosted in Germany.
+          </p>
+        </div>
+
+        <div class="security-section card-glass fade-in">
+          <div class="badges">
+            <img src="../../../assets/logo/TUeV-1-e1726825275172.png" alt="Badge 1" />
+            <img src="../../../assets/logo/2-1.webp" alt="Badge 2" />
+            <img src="../../../assets/logo/1-1.webp" alt="Badge 3" />
+          </div>
+          <div class="buttons">
+            <button class="demo">Request a demo</button>
+            <button class="info">More info</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

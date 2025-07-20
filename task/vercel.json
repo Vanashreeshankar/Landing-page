@@ -1,0 +1,10 @@
+{
+    "routes": [
+      {
+        "src": "/assets/(.*)",
+        "headers": {
+          "cache-control": "max-age=0, must-revalidate"
+        }
+      }
+    ]
+  }

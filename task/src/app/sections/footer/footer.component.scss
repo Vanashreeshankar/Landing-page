@@ -1,0 +1,112 @@
+@use 'sass:color';
+
+$deep-purple: #2D004D;
+$gradient-start: #F6E6FF;
+$gradient-end: #E9D1FF;
+$footer-bg:  linear-gradient(135deg, #f4e9ff 0%, #e5d8ff 100%);
+$text-color: $deep-purple;
+
+.footer {
+  background: $footer-bg;
+  color: $text-color;
+  padding: 3rem 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03);
+
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  .footer-branding {
+    max-width: 300px;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: $deep-purple;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: darken($deep-purple, 10%);
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 4rem;
+
+    h4 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+      color: $deep-purple;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.4rem;
+
+        a {
+          color: darken($deep-purple, 15%);
+          text-decoration: none;
+          font-size: 0.95rem;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #b266b2;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-social {
+    text-align: center;
+    margin-top: 2.5rem;
+
+    .social-icons {
+      margin-bottom: 0.8rem;
+
+      a {
+        margin: 0 0.5rem;
+        font-size: 1.2rem;
+        color: $deep-purple;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #b266b2;
+        }
+      }
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: darken($deep-purple, 20%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-links {
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+  }
+}

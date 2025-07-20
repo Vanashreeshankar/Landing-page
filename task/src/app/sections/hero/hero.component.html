@@ -1,0 +1,45 @@
+<div class="social-wrapper">
+  <!-- Left content -->
+  <div class="content-left">
+    <div class="intro-copy">
+      <h1>Meet SocialHub: Your All-in-One Social Media Powerhouse</h1>
+      <ul>
+        <li><strong>Unified Smart Inbox: </strong>All comments, messages & mentions in one inbox, process requests together & via approval processes, user history, notes, templates & more.</li>
+        <li><strong>Intelligent Content Planner: </strong> Plan all your posts on one platform, practical calendar view for all your posts, link your meta advertising account.</li>
+        <li><strong>Insight-Driven Analytics: </strong> Meaningful statistics on your content, campaign-specific analyses thanks to tags and many more.</li>
+      </ul>
+    </div>
+    <button class="cta">Start Free Trial</button>
+  </div>
+
+  <!-- Floating toggle button -->
+  <div class="icon-toggle" (click)="toggleIcons()">
+    <span>We Support</span>
+  </div>
+
+  <!-- Icon list with arc layout -->
+  <div class="icon-list" [class.active]="iconsVisible">
+    <div
+      class="icon"
+      *ngFor="let icon of icons; let i = index"
+      [ngStyle]="getIconStyle(i)"
+      [attr.title]="icon.label"
+    >
+      <i [class]="icon.class"></i>
+    </div>
+  </div>
+
+  <!-- Trusted logos -->
+  <div class="trust-us-wrapper">
+    <div class="trust-us-container">
+      <h2>Trusted by</h2>
+      <div class="slider">
+        <div class="slide-track">
+          <div class="slide" *ngFor="let logo of duplicatedLogos">
+            <img [src]="logo" alt="Brand Logo" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
